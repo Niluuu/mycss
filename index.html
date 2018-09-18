@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css boxs</title>
+</head>
+<style>
+    body, html {
+        width: 100%; height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        background: url("assests/image/bg-img.jpg");
+        background-size: cover;
+    }
+    body:after{
+        opacity: .5;
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left:0;
+        top:0;
+        display: block;
+        content: '';
+    }
+
+    #container {
+        width: 100%;
+        perspective: 800;
+        position: relative;
+        z-index: 1;
+    }
+
+    #shape {
+        position: relative;
+        top: 180px;
+        margin: 0 auto;
+        height: 200px;
+        width: 200px;
+
+        transform-style: preserve-3d;
+        -webkit-animation: spin 30s infinite linear;
+    }
+
+    @keyframes spin {
+        from {transform: rotateY(0) rotateX(0);}
+        to   {transform: rotateY(-360deg) rotate(360deg);}
+    }
+
+    #shape >  div {
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    #shape > div img {
+        width: 100%; height: 100%;
+    }
+
+    /*CUBE SIDES*/
+
+    .one {
+        transform: rotateX(90deg) translateZ(100px);
+
+    }
+    .two {
+        transform: translateZ(100px);
+    }
+    .three {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .four {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+    .five {
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+    .six {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+</style>
+
+
+<body>
+    <div id="container">
+        <div id="shape">
+            <div class="one"><a href="#"><img src="assests/image/image-1.jpg" alt=""></a></div>
+            <div class="two"><a href="#"><img src="assests/image/image-2.jpg" alt=""></a></div>
+            <div class="three"><a href="#"><img src="assests/image/image-3.jpg" alt=""></a></div>
+            <div class="four"><a href="#"><img src="assests/image/image-4.jpg" alt=""></a></div>
+            <div class="five"><a href="#"><img src="assests/image/image-5.jpg" alt=""></a></div>
+            <div class="six"><a href="#"><img src="assests/image/image-6.jpg" alt=""></a></div>
+        </div>
+    </div>
+</body>
+
+</html>
